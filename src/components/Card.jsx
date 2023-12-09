@@ -1,0 +1,47 @@
+import React from "react";
+
+import { TfiLineDashed } from "react-icons/tfi";
+import "../styles/Card.css";
+
+const Card = ({ id, title, tags, status }) => {
+  return (
+    <div className="container">
+      <div className="cardHeading2" style={{ justifyContent: "space-between" }}>
+        <span style={{ textTransform: "uppercase", color: "darkgrey" }}>
+          {id}
+        </span>
+
+        <div className="image">
+          <img
+            src="https://quicksell.co/assets/logo/logo.png"
+            alt="QuickSell"
+          />
+          
+
+          
+        </div>
+      </div>
+
+      <div className="title">
+        <p>{title}</p>
+      </div>
+
+      <div className="tags">
+        <div className="tag">
+         
+          <TfiLineDashed />
+          
+        </div>
+        {tags?.map((element, index) => {
+          return (
+            <div key={index} className="tag">
+               <span>⬤ </span>{element}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Card;
